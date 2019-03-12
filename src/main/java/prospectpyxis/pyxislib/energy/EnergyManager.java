@@ -8,6 +8,10 @@ public class EnergyManager extends EnergyStorage {
         super(capacity, maxTransfer);
     }
 
+    public EnergyManager(int capacity, int maxInput, int maxOutput) {
+        super(capacity, maxInput, maxOutput);
+    }
+
     public void setEnergy(int value) {
         energy = Math.min(capacity, value);
     }

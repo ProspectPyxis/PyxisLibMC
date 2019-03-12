@@ -21,9 +21,9 @@ public class PyxisLib {
 
     public static final String modid = "pyxislib";
     public static final String name = "PyxisLib";
-    public static final String version = "1.12.2-0.1";
+    public static final String version = "1.12.2-0.2";
 
-    public static final Logger logger = LogManager.getLogger(modid);
+    public static Logger logger;
 
     @Mod.Instance(modid)
     public static PyxisLib instance;
@@ -43,7 +43,8 @@ public class PyxisLib {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        logger.info("Now loading" + name);
+        logger = event.getModLog();
+        logger.info("Now loading " + name);
     }
 
     @Mod.EventBusSubscriber
