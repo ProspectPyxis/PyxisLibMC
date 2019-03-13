@@ -1,12 +1,16 @@
 package prospectpyxis.pyxislib.utils;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 public class ItemUtils {
 
-    public boolean isWrench(Item itm) {
-        Item wrench = Item.getByNameOrId("pyxislib:simple_wrench");
+    // This allows for registry of basic items that have no functionality
+    public static Item newSimpleItem(String name) {
+        return newSimpleItem(name, CreativeTabs.MISC);
+    }
 
-        return itm.equals(wrench);
+    public static Item newSimpleItem(String name, CreativeTabs tab) {
+        return new Item().setCreativeTab(tab).setUnlocalizedName(name).setRegistryName(name);
     }
 }

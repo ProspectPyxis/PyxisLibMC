@@ -10,10 +10,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import prospectpyxis.pyxislib.item.ItemBasic;
-import prospectpyxis.pyxislib.item.wrench.WrenchRegisterer;
 import prospectpyxis.pyxislib.proxy.CommonProxy;
 
 @Mod(modid = PyxisLib.modid, name = PyxisLib.name, version = PyxisLib.version)
@@ -21,23 +18,23 @@ public class PyxisLib {
 
     public static final String modid = "pyxislib";
     public static final String name = "PyxisLib";
-    public static final String version = "1.12.2-0.2";
+    public static final String version = "1.12.2-0.3";
 
     public static Logger logger;
 
     @Mod.Instance(modid)
     public static PyxisLib instance;
 
-    @SidedProxy(serverSide = "prospectpyxis.pyxislib.proxy.CommonProxy", clientSide = "prospectpyxis.pyxislib.proxy.ClientProxy")
+    @SidedProxy(serverSide = "prospectpyxis.pyxislib.proxy.ServerProxy", clientSide = "prospectpyxis.pyxislib.proxy.ClientProxy")
     public static CommonProxy proxy;
 
     @GameRegistry.ObjectHolder(modid + ":simple_wrench")
-    public static ItemBasic wrench;
+    public static Item WRENCH;
 
     public static CreativeTabs ctab = new CreativeTabs("pyxislib") {
         @Override
         public ItemStack getTabIconItem() {
-            return new ItemStack(wrench);
+            return new ItemStack(WRENCH);
         }
     };
 

@@ -1,14 +1,12 @@
-package prospectpyxis.pyxislib.item.wrench;
+package prospectpyxis.pyxislib;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.IForgeRegistry;
-import prospectpyxis.pyxislib.ModConfig;
-import prospectpyxis.pyxislib.PyxisLib;
-import prospectpyxis.pyxislib.item.ItemBasic;
+import prospectpyxis.pyxislib.item.ItemWrench;
 
 public class WrenchRegisterer {
 
-    public static ItemBasic wrench = new ItemBasic("simple_wrench").setCreativeTab(PyxisLib.ctab);
+    public static Item wrench = new ItemWrench();
 
     public static void register(IForgeRegistry<Item> registry) {
         if (ModConfig.enableWrench) {
@@ -18,7 +16,7 @@ public class WrenchRegisterer {
 
     public static void registerModels() {
         if (ModConfig.enableWrench) {
-            PyxisLib.proxy.registerItemRenderer(wrench, 0, wrench.getBasicName());
+            PyxisLib.proxy.registerItemRenderer(wrench, 0, wrench.getUnlocalizedName());
         }
     }
 }
