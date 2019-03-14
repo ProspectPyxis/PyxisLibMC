@@ -25,7 +25,7 @@ public class ItemWrench extends Item {
         Block blk = worldIn.getBlockState(pos).getBlock();
         if (blk instanceof IWrenchable) {
             try {
-                ((IWrenchable) blk).applyWrench(facing, player.isSneaking());
+                ((IWrenchable) blk).applyWrench(worldIn, pos, facing, player.isSneaking());
                 return EnumActionResult.SUCCESS;
             } catch(Exception e) {
                 PyxisLib.logger.error(e);
