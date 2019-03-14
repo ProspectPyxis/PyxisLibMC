@@ -1,6 +1,7 @@
 package prospectpyxis.pyxislib.item;
 
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.EnumActionResult;
@@ -16,7 +17,7 @@ public class ItemWrench extends Item {
     public ItemWrench() {
         setUnlocalizedName("simple_wrench");
         setRegistryName("simple_wrench");
-        setCreativeTab(PyxisLib.ctab);
+        setCreativeTab(CreativeTabs.TOOLS);
     }
 
     @Override

@@ -18,7 +18,7 @@ public class PyxisLib {
 
     public static final String modid = "pyxislib";
     public static final String name = "PyxisLib";
-    public static final String version = "1.12.2-0.3.1";
+    public static final String version = "1.12.2-0.3.2";
 
     public static Logger logger;
 
@@ -30,13 +30,6 @@ public class PyxisLib {
 
     @GameRegistry.ObjectHolder(modid + ":simple_wrench")
     public static Item WRENCH;
-
-    public static CreativeTabs ctab = new CreativeTabs("pyxislib") {
-        @Override
-        public ItemStack getTabIconItem() {
-            return new ItemStack(WRENCH);
-        }
-    };
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
