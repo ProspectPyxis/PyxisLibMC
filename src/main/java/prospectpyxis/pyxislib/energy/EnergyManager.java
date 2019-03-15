@@ -15,4 +15,16 @@ public class EnergyManager extends EnergyStorage {
     public void setEnergy(int value) {
         energy = Math.min(capacity, value);
     }
+
+    public void setCapacity(int value) {
+        capacity = Math.max(0, value);
+    }
+
+    public void setMaxInput(int value) {
+        maxReceive = Math.max(0, value);
+    }
+
+    public void setMaxOutput(int value) {
+        maxExtract = Math.max(0, value);
+    }
 }
