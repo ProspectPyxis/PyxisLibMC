@@ -1,4 +1,4 @@
-package prospectpyxis.pyxislib.item;
+package prospectpyxis.pyxislib.item.wrench;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -28,7 +28,7 @@ public class ItemWrench extends Item {
                 ((IWrenchable) blk).applyWrench(worldIn, pos, facing, player.isSneaking());
                 return EnumActionResult.SUCCESS;
             } catch(Exception e) {
-                PyxisLib.logger.error(e);
+                PyxisLib.logger.error("Error using wrench: " + e.getMessage());
                 return EnumActionResult.FAIL;
             }
         }

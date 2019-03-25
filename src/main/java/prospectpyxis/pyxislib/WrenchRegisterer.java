@@ -1,10 +1,8 @@
 package prospectpyxis.pyxislib;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.registries.IForgeRegistry;
-import prospectpyxis.pyxislib.item.ItemWrench;
+import prospectpyxis.pyxislib.item.wrench.ItemWrench;
 
 public class WrenchRegisterer {
 
