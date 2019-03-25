@@ -12,7 +12,7 @@ import javax.annotation.Nonnull;
 
 public class RendererUtils {
 
-    public static final float UV_CORRECT = 1/10000f;
+    public static final float UV_CORRECT = 1/50000f;
 
     public static float getMinUCorrected(TextureAtlasSprite tex) {
         return tex.getMinU() + UV_CORRECT;
