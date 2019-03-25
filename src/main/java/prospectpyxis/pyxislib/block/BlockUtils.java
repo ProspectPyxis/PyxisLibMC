@@ -1,4 +1,4 @@
-package prospectpyxis.pyxislib.utils;
+package prospectpyxis.pyxislib.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

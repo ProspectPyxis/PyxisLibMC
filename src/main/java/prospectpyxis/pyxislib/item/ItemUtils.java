@@ -1,4 +1,4 @@
-package prospectpyxis.pyxislib.utils;
+package prospectpyxis.pyxislib.item;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
