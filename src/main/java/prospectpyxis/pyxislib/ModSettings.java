@@ -3,7 +3,7 @@ package prospectpyxis.pyxislib;
 import net.minecraftforge.common.config.Config;
 
 @Config(modid = PyxisLib.modid)
-public class ModConfig {
+public class ModSettings {
 
     @Config.Comment({
             "Setting this to false will disable the simple wrench item.",

@@ -9,13 +9,13 @@ public class WrenchRegisterer {
     public static Item wrench = new ItemWrench();
 
     public static void register(IForgeRegistry<Item> registry) {
-        if (ModConfig.enableWrench) {
+        if (ModSettings.enableWrench) {
             registry.register(wrench);
         }
     }
 
     public static void registerModels() {
-        if (ModConfig.enableWrench) {
+        if (ModSettings.enableWrench) {
             PyxisLib.proxy.registerItemRenderer(wrench, 0, wrench.getRegistryName());
         }
     }
