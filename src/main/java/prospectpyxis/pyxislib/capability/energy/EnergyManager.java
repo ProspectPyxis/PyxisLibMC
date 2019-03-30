@@ -1,4 +1,4 @@
-package prospectpyxis.pyxislib.energy;
+package prospectpyxis.pyxislib.capability.energy;
 
 import net.minecraftforge.energy.EnergyStorage;
 

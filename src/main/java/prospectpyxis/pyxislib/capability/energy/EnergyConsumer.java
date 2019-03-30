@@ -1,4 +1,4 @@
-package prospectpyxis.pyxislib.energy;
+package prospectpyxis.pyxislib.capability.energy;
 
 public class EnergyConsumer extends EnergyManager {
 
