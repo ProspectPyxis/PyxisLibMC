@@ -1,4 +1,4 @@
-package prospectpyxis.pyxislib.item.wrench;
+package prospectpyxis.pyxislib.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -15,8 +15,8 @@ import prospectpyxis.pyxislib.block.IWrenchable;
 public class ItemWrench extends Item {
 
     public ItemWrench() {
-        setUnlocalizedName("simple_wrench");
         setRegistryName("simple_wrench");
+        setUnlocalizedName(PyxisLib.modid + ".simple_wrench");
         setCreativeTab(CreativeTabs.TOOLS);
     }
 
