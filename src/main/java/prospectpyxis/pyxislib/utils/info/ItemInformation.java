@@ -41,6 +41,16 @@ public class ItemInformation {
         return this;
     }
 
+    public ItemInformation setModelData(HashMap<String, Integer> model_data) {
+        this.model_data = model_data;
+        return this;
+    }
+
+    public ItemInformation addModelData(String name, int meta) {
+        this.model_data.put(name, meta);
+        return this;
+    }
+
     public HashMap<String, Integer> getModelData() {
         return model_data;
     }

@@ -6,7 +6,11 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
+import prospectpyxis.pyxislib.PyxisLib;
 import prospectpyxis.pyxislib.block.BlockWithTileEntity;
+
+import java.lang.reflect.Constructor;
+import java.util.HashMap;
 
 public class BlockInformation {
 
@@ -36,8 +40,29 @@ public class BlockInformation {
         this(block, block.getRegistryName().getResourcePath(), block.getRegistryName().getResourcePath(), 0, new ItemBlock(block).setRegistryName(block.getRegistryName().getResourcePath()));
     }
 
-    public BlockInformation setItemBlock(ItemBlock ib) {
+    public BlockInformation setItemBlock(Item ib) {
         this.itemBlockInfo = new ItemInformation(ib);
+        return this;
+    }
+
+    public BlockInformation setItemBlockByClass(Class<? extends ItemBlock> ibc) {
+        // Incredibly janky? Likely
+        // Is there a better way? Likely not (but feel free to prove me wrong)
+        Constructor<? extends ItemBlock> ctor;
+        try {
+            ctor = ibc.getConstructor(Block.class);
+        } catch(Exception e) {
+            PyxisLib.logger.error("Error in method setItemBlockByClass in getConstructor: " + e.getMessage());
+            return this;
+        }
+        Item ib;
+        try {
+            ib = ctor.newInstance(this.block);
+        } catch(Exception e) {
+            PyxisLib.logger.error("Error in method setItemBlockByClass in setInstance: " + e.getMessage());
+            return this;
+        }
+        this.itemBlockInfo = new ItemInformation(ib.setRegistryName(this.name));
         return this;
     }
 
@@ -45,6 +70,16 @@ public class BlockInformation {
         // configOption should point to a, well, config option that would disable this block
         this.isEnabled = configOption;
         this.itemBlockInfo.setEnabled(configOption);
+        return this;
+    }
+
+    public BlockInformation setItemBlockModel(HashMap<String,Integer> modelData) {
+        this.itemBlockInfo.setModelData(modelData);
+        return this;
+    }
+
+    public BlockInformation addItemBlockModel(String name, int meta) {
+        this.itemBlockInfo.addModelData(name, meta);
         return this;
     }
 
