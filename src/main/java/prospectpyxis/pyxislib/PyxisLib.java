@@ -1,8 +1,6 @@
 package prospectpyxis.pyxislib;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -11,14 +9,14 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
-import prospectpyxis.pyxislib.proxy.CommonProxy;
+import prospectpyxis.pyxislib.proxy.IBaseProxy;
 
 @Mod(modid = PyxisLib.modid, name = PyxisLib.name, version = PyxisLib.version)
 public class PyxisLib {
 
     public static final String modid = "pyxislib";
     public static final String name = "PyxisLib";
-    public static final String version = "1.12.2-1.2.0";
+    public static final String version = "1.12.2-1.3.0";
 
     public static Logger logger;
 
@@ -26,7 +24,7 @@ public class PyxisLib {
     public static PyxisLib instance;
 
     @SidedProxy(serverSide = "prospectpyxis.pyxislib.proxy.ServerProxy", clientSide = "prospectpyxis.pyxislib.proxy.ClientProxy")
-    public static CommonProxy proxy;
+    public static IBaseProxy proxy;
 
     @GameRegistry.ObjectHolder(modid + ":simple_wrench")
     public static Item WRENCH;
@@ -42,12 +40,12 @@ public class PyxisLib {
 
         @SubscribeEvent
         public static void registerItems(RegistryEvent.Register<Item> event) {
-            WrenchRegisterer.register(event.getRegistry());
+            ItemRegisterer.register(event.getRegistry());
         }
 
         @SubscribeEvent
         public static void registerModels(ModelRegistryEvent event) {
-            WrenchRegisterer.registerModels();
+            ItemRegisterer.registerModels();
         }
     }
 }

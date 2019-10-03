@@ -6,9 +6,9 @@ import net.minecraftforge.common.config.Config;
 public class ModSettings {
 
     @Config.Comment({
-            "Setting this to false will disable the simple wrench item.",
-            "Note that this can potentially hinder mods that use the wrench!",
-            "[default: true]"
+            "Setting this to true will enable the bundled wrench item.",
+            "Remember to enable this if you have any mod that uses it!",
+            "[default: false]"
     })
-    public static boolean enableWrench = true;
+    public static boolean enableWrench = false;
 }

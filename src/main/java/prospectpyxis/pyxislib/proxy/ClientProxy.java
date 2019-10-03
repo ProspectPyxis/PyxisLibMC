@@ -5,10 +5,10 @@ import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 
-public class ClientProxy extends CommonProxy {
+public class ClientProxy implements IBaseProxy {
 
     @Override
-    public void registerItemRenderer(Item item, int meta, ResourceLocation name) {
-        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(name, "inventory"));
+    public void registerItemRenderer(Item item, int meta, String name) {
+        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(name));
     }
 }
