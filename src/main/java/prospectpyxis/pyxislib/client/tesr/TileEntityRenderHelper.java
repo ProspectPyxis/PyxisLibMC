@@ -1,4 +1,4 @@
-package prospectpyxis.pyxislib.client;
+package prospectpyxis.pyxislib.client.tesr;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -10,7 +10,7 @@ import org.lwjgl.util.Color;
 
 import javax.annotation.Nonnull;
 
-public class RendererUtils {
+public class TileEntityRenderHelper {
 
     public static final float UV_CORRECT = 1/50000f;
 

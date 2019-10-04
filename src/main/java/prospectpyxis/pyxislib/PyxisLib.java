@@ -16,7 +16,7 @@ public class PyxisLib {
 
     public static final String modid = "pyxislib";
     public static final String name = "PyxisLib";
-    public static final String version = "1.12.2-1.3.3";
+    public static final String version = "1.12.2-2.0.0";
 
     public static Logger logger;
 
