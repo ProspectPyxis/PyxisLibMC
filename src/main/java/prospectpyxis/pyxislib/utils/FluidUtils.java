@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 public class FluidUtils {
 
-    public boolean handleFluidMatAcceleration(Entity entityIn, Material materialIn) {
+    public static boolean handleFluidMatAcceleration(Entity entityIn, Material materialIn) {
         // Code taken from Jabelar's fluid tutorial, with formatting changes
         World world = entityIn.world;
         AxisAlignedBB bb = entityIn.getEntityBoundingBox().grow(0.0d, -0.4d, 0.0d).shrink(0.001d);
