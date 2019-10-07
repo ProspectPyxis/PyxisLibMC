@@ -97,4 +97,8 @@ public class BlockInformation {
     public void registerBlock(IForgeRegistry<Block> registry) {
         if (isEnabled) registry.register(this.block);
     }
+
+    public void registerItemBlock(IForgeRegistry<Item> registry) {
+        this.itemBlockInfo.registerItem(registry);
+    }
 }
