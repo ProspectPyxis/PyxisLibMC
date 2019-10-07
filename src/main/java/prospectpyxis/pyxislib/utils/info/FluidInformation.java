@@ -53,11 +53,14 @@ public class FluidInformation {
         return this;
     }
 
-    public void registerBlockAndItem(IForgeRegistry<Block> blockRegistry, IForgeRegistry<Item> itemRegistry) {
-        if (this.blockFluidInfo == null) return;
+    public void registerBlockFluid(IForgeRegistry<Block> registry) {
+        if (this.blockFluidInfo == null || !this.isEnabled) return;
+        this.blockFluidInfo.registerBlock(registry);
+    }
 
-        this.blockFluidInfo.registerBlock(blockRegistry);
-        this.blockFluidInfo.itemBlockInfo.registerItem(itemRegistry);
+    public void registerItemBlockFluid(IForgeRegistry<Item> registry) {
+        if (this.blockFluidInfo == null || !this.isEnabled) return;
+        this.blockFluidInfo.registerItemBlock(registry);
     }
 
     public void registerIBFModel(IBaseProxy proxy) {
