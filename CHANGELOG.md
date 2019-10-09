@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 ### Added:
 - New `FluidInformation` class for handling fluid registration
+- New methods in `ItemUtils`: `compareItems`, `matchItemStacks`, `parseItemStackFromString`, and `itemStackStringHasMeta`
 ### Fixed:
 - `FluidUtils`'s `handleFluidMatAcceleration` function not being static
 
