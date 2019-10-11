@@ -2,11 +2,11 @@ package prospectpyxis.pyxislib.utils.info;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 import prospectpyxis.pyxislib.proxy.IBaseProxy;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ItemInformation {
 
@@ -14,6 +14,7 @@ public class ItemInformation {
     public String name;
     public boolean isEnabled = true;
     private HashMap<String,Integer> model_data = new HashMap<>();
+    private List<String> oredicts = new ArrayList<>();
 
     public ItemInformation(Item item, String name, HashMap<String,Integer> model_data) {
         this.item = item;
@@ -51,6 +52,11 @@ public class ItemInformation {
         return this;
     }
 
+    public ItemInformation addOreDictEntries(String... entries) {
+        this.oredicts.addAll(Arrays.asList(entries));
+        return this;
+    }
+
     public HashMap<String, Integer> getModelData() {
         return model_data;
     }
@@ -63,6 +69,12 @@ public class ItemInformation {
         if (!isEnabled) return;
         for (Map.Entry<String,Integer> entry : this.model_data.entrySet()) {
             proxy.registerItemRenderer(this.item, entry.getValue(), entry.getKey());
+        }
+    }
+
+    public void registerOreDictEntries() {
+        for (String o : oredicts) {
+            OreDictionary.registerOre(o, this.item);
         }
     }
 

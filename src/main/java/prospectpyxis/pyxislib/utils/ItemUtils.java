@@ -40,6 +40,7 @@ public class ItemUtils {
 
     public static boolean matchItemStacks(ItemStack i1, ItemStack i2, boolean ignoreMeta) {
         return (
+                i1 != null && i2 != null &&
                 i1.getItem() == i2.getItem() &&
                 (i1.getItemDamage() == i2.getItemDamage() || ignoreMeta)
         );
@@ -59,7 +60,7 @@ public class ItemUtils {
         }
         Item itemBase = Item.getByNameOrId(item);
         if (itemBase == null) return null;
-        else return new ItemStack(itemBase, 0, meta);
+        else return new ItemStack(itemBase, 1, meta);
     }
 
     public static boolean itemStackStringHasMeta(String iss) {
